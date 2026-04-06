@@ -43,7 +43,7 @@ if st.button("Recommend"):
     ]
     if not strict_filtered.empty:
      
-     recommendations = strict_filtered.copy(`    `)
+     recommendations = strict_filtered.copy()
      st.success("Exact matches found!")
     else:
       
