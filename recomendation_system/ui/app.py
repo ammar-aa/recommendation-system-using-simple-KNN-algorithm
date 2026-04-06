@@ -6,7 +6,7 @@ import pickle
 with open("recomendation_system/ui/book_recommender.pkl", "rb") as f:
     pipeline = pickle.load(f)
 
-df = pd.read_csv("recomendation_system/ui/books.csv")
+df = pd.read_csv("recomendation_system/data/books.csv")
 df.drop('Awards', axis=1, inplace=True)
 
 
