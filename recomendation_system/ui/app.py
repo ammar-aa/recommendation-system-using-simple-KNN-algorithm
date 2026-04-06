@@ -4,7 +4,7 @@ import pickle
 
 
 with open("book_recommender.pkl", "rb") as f:
- pipeline = pickle.load(f)
+    pipeline = pickle.load(f)
 
 df = pd.read_csv("books.csv")
 df.drop('Awards', axis=1, inplace=True)
@@ -44,7 +44,7 @@ if st.button("Recommend"):
     if not strict_filtered.empty:
      
      recommendations = strict_filtered.copy(`    `)
-         st.success("Exact matches found!")
+     st.success("Exact matches found!")
     else:
       
         distances, indices = pipeline.named_steps['knn'].kneighbors(
@@ -54,7 +54,7 @@ if st.button("Recommend"):
         recommendations['similarity_distance'] = distances[0]
         st.info("No exact matches, showing closest books instead.")
 
-        cols_to_show = [title_col] + allowed_features + meta_data
+    cols_to_show = [title_col] + allowed_features + meta_data
     if 'similarity_distance' in recommendations.columns:
         cols_to_show += ['similarity_distance']
 
