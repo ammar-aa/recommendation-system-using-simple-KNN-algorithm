@@ -3,7 +3,7 @@ import pandas as pd
 import pickle
 
 
-with open("book_recommender.pkl", "rb") as f:
+with open("recomendation_system/ui/book_recommender.pkl", "rb") as f:
     pipeline = pickle.load(f)
 
 df = pd.read_csv("books.csv")
